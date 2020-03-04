@@ -1,1 +1,2 @@
-# Algorithm_SelfTraining
+# AlgorithmTraining
+뚜닥이기!
