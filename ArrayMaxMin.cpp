@@ -1,4 +1,5 @@
 #include <iostream>
+//입력받은 정수 중 최대, 최소 출력
 
 using namespace std;
 
