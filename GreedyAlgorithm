@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+//BOJ 11399번 그리디 알고리즘
+
+using namespace std;
+
+bool cmp(const pair<int, int> &a, const pair<int, int> &b){
+    return a.second < b.second;
+}
+int getMinWithdrawTime(vector<pair<int,int>> &withdrawTimes){
+    int result = 0;
+
+    sort(withdrawTimes.begin(), withdrawTimes.end(), cmp);
+
+    for(int i=1; i <= withdrawTimes.size(); i++){
+        for(int j=0;j<i;j++) {
+            result+=withdrawTimes[j].second;
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    int N;
+    cin>>N;
+
+    vector<pair<int,int>> withdrawTimes;
+
+    for(int i=0; i<N; i++){
+        int time;
+        cin>>time;
+        withdrawTimes.push_back(make_pair(i, time));
+    }
+
+    cout<<getMinWithdrawTime(withdrawTimes);
+
+    return 0;
+}
