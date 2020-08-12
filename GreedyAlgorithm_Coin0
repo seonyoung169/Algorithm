@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+
+//BOJ 11047번 동전 문제
+
+using namespace  std;
+
+int getMinCoins(int K, vector<int> & coins){
+    int result = 0;
+
+    for(int i = coins.size()-1; i>=0; i--) {
+        if(coins.at(i) <= K){
+            result += (K /coins.at(i));
+            K = K % (coins.at(i));
+        }
+
+        if(K==0) break;
+    }
+
+    return result;
+}
+
+int main(){
+    int N, K, temp;
+    cin>>N>>K;
+
+    vector<int> coins;
+    for(int i=0; i<N; i++){
+        cin>>temp;
+        coins.push_back(temp);
+    }
+
+    cout<<getMinCoins(K, coins)<<endl;
+
+    return 0;
+}
