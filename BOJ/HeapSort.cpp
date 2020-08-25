@@ -16,7 +16,7 @@ void heapSortion(vector<int> & data){
         int idx = i, root, temp;
 
         do{
-            root = (idx-1)/1;
+            root = (idx-1)/2;
             if(data.at(root) < data.at(idx)){
                 swap(data.at(root), data.at(idx));
             }
