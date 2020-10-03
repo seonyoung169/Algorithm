@@ -41,6 +41,7 @@ int main(){
     for(int i=0; i<M; i++){
         cin>>a>>b;
         graph[a].push_back(b);
+        graph[b].push_back(a);
     }
     st.push(1);
 
