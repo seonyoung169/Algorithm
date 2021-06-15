@@ -2,7 +2,8 @@
 #include <vector>
 #include <map>
 #include <algorithm>
-
+ 
+// 프로그래머스 해시 베스트앨범, level 3
 using namespace std;
 
 bool genreByPlay(pair<string, int> p1, pair<string, int> p2) {
